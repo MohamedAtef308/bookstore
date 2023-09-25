@@ -1,66 +1,4 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 14.5
--- Dumped by pg_dump version 15rc2
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- Name: Project1; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE "Project1" WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'Arabic_Egypt.1252';
-
-
-ALTER DATABASE "Project1" OWNER TO postgres;
-
-\connect "Project1"
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- Name: public; Type: SCHEMA; Schema: -; Owner: postgres
---
-
-CREATE SCHEMA public;
-
-
-ALTER SCHEMA public OWNER TO postgres;
-
---
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: postgres
---
-
-COMMENT ON SCHEMA public IS 'standard public schema';
-
-
-SET default_tablespace = '';
-
-SET default_table_access_method = heap;
-
---
--- Name: blog; Type: TABLE; Schema: public; Owner: postgres
---
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE public.blog (
     blog_id character varying(200) DEFAULT concat('a', public.uuid_generate_v4()) NOT NULL,
@@ -296,9 +234,6 @@ CREATE TABLE public.writes (
 
 ALTER TABLE public.writes OWNER TO postgres;
 
---
--- Data for Name: blog; Type: TABLE DATA; Schema: public; Owner: postgres
---
 
 INSERT INTO public.blog VALUES
 	('a570221f8-6d37-4505-ab2c-dcda3823ed80', 'The Best Fantasy Book EVER', 'Imagine trying to study for a test, not only at a regular school, but one for wizards, and also fearing that a monster will petrify you. That’s how Harry Potter feels. The Chamber of Secrets is open, muggle wizards are being petrified, and there’s a mysterious person who might know something about this. Also, could Harry be the descendant of Slytherin? All these thoughts and more are appearing in your mind as you read Harry Potter and the Chamber of Secrets.
@@ -368,7 +303,13 @@ Fleeing from Westeros with a price on his head, Tyrion Lannister, too, is making
 
 Meanwhile, to the north lies the mammoth Wall of ice and stone—a structure only as strong as those guarding it. There, Jon Snow, 998th Lord Commander of the Night’s Watch, will face his greatest challenge. For he has powerful foes not only within the Watch but also beyond, in the land of the creatures of ice.
 
-From all corners, bitter conflicts reignite, intimate betrayals are perpetrated, and a grand cast of outlaws and priests, soldiers and skinchangers, nobles and slaves, will face seemingly insurmountable obstacles. Some will fail, others will grow in the strength of darkness. But in a time of rising restlessness, the tides of destiny and politics will lead inevitably to the greatest dance of all.', 'https://m.media-amazon.com/images/I/81e1rZDeBBL.jpg');
+From all corners, bitter conflicts reignite, intimate betrayals are perpetrated, and a grand cast of outlaws and priests, soldiers and skinchangers, nobles and slaves, will face seemingly insurmountable obstacles. Some will fail, others will grow in the strength of darkness. But in a time of rising restlessness, the tides of destiny and politics will lead inevitably to the greatest dance of all.', 'https://m.media-amazon.com/images/I/81e1rZDeBBL.jpg'),
+	('a5c5ccab2-c9eb-436f-9167-80e84b1bb897', 300, 'Death Note', '2006-10-15', 106, NULL, 1, 3, 18, true, false, 'A high school student named Light Turner discovers a mysterious notebook that has the power to kill anyone whose name is written within its pages, and launches a secret crusade to rid the world of criminals.Light Turner, a bright student, stumbles across a mystical notebook that has the power to kill any person whose name he writes in it. Light decides to launch a secret crusade to rid the streets of criminals. Soon, the student-turned-vigilante finds himself pursued by a famous detective known only by the alias L.', 'https://i.ibb.co/kHPYSxR/51514203.jpg'),
+	('aa640c333-89c7-4a23-b5fe-486b7873c136', 500, 'Palace of desire', '1957-05-15', 16, NULL, 1, 4, 18, true, false, 'The plot continues the story of al-Sayyid Ahmad s family as the patriarch loosens his once strangling grip of control over his wife and children. His sons grapple with love and loss and their place in the changing world of colonial Egypt. The father is forced to confront his age and difficulties that come with having adult children you can no longer control.', 'https://i.ibb.co/yhNvdYY/images.jpg'),
+	('a436d387f-e238-4706-82e5-8f23f1192fe7', 300, 'It Ends With Us', '2016-08-02', 26, 'It Begins With Us', 1, 3, 17, true, false, 'Lily hasn''t always had it easy, but that''s never stopped her from working hard for the life she wants. She''s come a long way from the small town where she grew up''she graduated from college, moved to Boston, and started her own business. And when she feels a spark with a gorgeous neurosurgeon named Ryle Kincaid, everything in Lily''s life seems too good to be true.\r\n\r\nRyle is assertive, stubborn, maybe even a little arrogant. He''s also sensitive, brilliant, and has a total soft spot for Lily. And the way he looks in scrubs certainly doesn''t hurt. Lily can''t get him out of her head. But Ryle''s complete aversion to relationships is disturbing. Even as Lily finds herself becoming the exception to his ΓÇ£no datingΓÇ¥ rule, she can''t help but wonder what made him that way in the first place.\r\n\r\nAs questions about her new relationship overwhelm her, so do thoughts of Atlas Corrigan''her first love and a link to the past she left behind. He was her kindred spirit, her protector. When Atlas suddenly reappears, everything Lily has built with Ryle is threatened.\r\n\r\nAn honest, evocative, and tender novel, It Ends with Us is "a glorious and touching read, a forever keeper. The kind of book that gets handed down" (USA TODAY).', 'https://i.ibb.co/DKh6mCQ/81s0-B6-NYXML.jpg'),
+	('a203f12d4-db96-4579-8b6f-0280fd42c420', 500, 'All the Ways We Said Goodbye: A Novel of the Ritz Paris', '2020-01-14', 23, NULL, 1, 5, 18, true, false, 'The heiress . . .\r\nThe Resistance fighter . . .\r\nThe widow . . .\r\nThree women whose fates are joined by one splendid hotel\r\n\r\nFrance, 1914. As war breaks out, Aurelie becomes trapped on the wrong side of the front with her father, Comte Sigismund de Courcelles. When the Germans move into their family''s ancestral estate, using it as their headquarters, Aurelie discovers she knows the German Major''s aide de camp, Maximilian Von Sternburg. She and the dashing young officer first met during Aurelie''s debutante days in Paris. Despite their conflicting loyalties, Aurelie and Max''s friendship soon deepens into love, but betrayal will shatter them both, driving Aurelie back to Paris and the Ritz'' the home of her estranged American heiress mother, with unexpected consequences.\r\n\r\nFrance, 1942. Raised by her indomitable, free-spirited American grandmother in the glamorous Hotel Ritz, Marguerite ΓÇ£DaisyΓÇ¥ Villon remains in Paris with her daughter and husband, a Nazi collaborator, after France falls to Hitler. At first reluctant to put herself and her family at risk to assist her grandmother''s Resistance efforts, Daisy agrees to act as a courier for a skilled English forger known only as Legrand, who creates identity papers for Resistance members and Jewish refugees. But as Daisy is drawn ever deeper into Legrand''s underground network, committing increasingly audacious acts of resistance for the sake of the country''and the man''she holds dear, she uncovers a devastating secret . . . one that will force her to commit the ultimate betrayal, and to confront at last the shocking circumstances of her own family history.\r\n\r\nFrance, 1964. For Barbara ΓÇ£BabsΓÇ¥ Langford, her husband, Kit, was the love of her life. Yet their marriage was haunted by a mysterious woman known only as La Fleur. On Kit''s death, American lawyer Andrew ΓÇ£DrewΓÇ¥ Bowdoin appears at her door. Hired to find a Resistance fighter turned traitor known as ΓÇ£La Fleur,ΓÇ¥ the investigation has led to Kit Langford. Curious to know more about the enigmatic La Fleur, Babs joins Drew in his search, a journey of discovery that that takes them to Paris and the Ritz''and to unexpected places of the heart. . . .', 'https://i.ibb.co/kQjKNZx/7199-Qe3p-Bc-L.jpg'),
+	('a17973a0f-28f5-487c-9d16-5d03f27232e6', 400, 'Ribbons of Scarlet: A Novel of the French Revolution s Women', '2019-10-01', 20, NULL, 1, 5, 18, true, false, 'Ribbons of Scarlet is a timely story of the power of women to start a revolution''and change the world.\r\n\r\nIn late eighteenth-century France, women do not have a place in politics. But as the tide of revolution rises, women from gilded salons to the streets of Paris decide otherwise''upending a world order that has long oppressed them.\r\n\r\nBlue-blooded Sophie de Grouchy believes in democracy, education, and equal rights for women, and marries the only man in Paris who agrees. Emboldened to fight the injustices of King Louis XVI, Sophie aims to prove that an educated populace can govern itself but one of her students, fruit-seller Louise Audu, is hungrier for bread and vengeance than learning. When the Bastille falls and Louise leads a women''s march to Versailles, the monarchy is forced to bend, but not without a fight. The king''s pious sister Princess Elisabeth takes a stand to defend her brother, spirit her family to safety, and restore the old order, even at the risk of her head.\r\n\r\nBut when fanatics use the newspapers to twist the revolution''s ideals into a new tyranny, even the women who toppled the monarchy are threatened by the guillotine. Putting her faith in the pen, brilliant political wife Manon Roland tries to write a way out of France''s blood-soaked Reign of Terror while pike-bearing Pauline Leon and steely Charlotte Corday embrace violence as the only way to save the nation. With justice corrupted by revenge, all the women must make impossible choices to survive unless unlikely heroine and courtesan''s daughter Emilie de Sainte-Amaranthe can sway the man who controls France''s fate: the fearsome Robespierre.', 'https://i.ibb.co/gT2v49M/9158u9-QZhd-L.jpg'),
+	('a4d0ebcef-d918-482e-96f2-e0781d8cc401', 130, 'The Things We Cannot Say', '2019-02-26', 9, NULL, 1, 5, 14, true, false, 'In 1942, Europe remains in the relentless grip of war. Just beyond the tents of the refugee camp she calls home, a young woman speaks her wedding vows. It''s a decision that will alter her destinyΓÇªand it''s a lie that will remain buried until the next century.\r\n\r\nSince she was nine years old, Alina Dziak knew she would marry her best friend, Tomasz. Now fifteen and engaged, Alina is unconcerned by reports of Nazi soldiers at the Polish border, believing her neighbors that they pose no real threat, and dreams instead of the day Tomasz returns from college in Warsaw so they can be married. But little by little, injustice by brutal injustice, the Nazi occupation takes hold, and Alina''s tiny rural village, its families, are divided by fear and hate.\r\n\r\nThen, as the fabric of their lives is slowly picked apart, Tomasz disappears. Where Alina used to measure time between visits from her beloved, now she measures the spaces between hope and despair, waiting for word from Tomasz and avoiding the attentions of the soldiers who patrol her parents'' farm. But for now, even deafening silence is preferable to grief.', 'https://i.ibb.co/4TGN3F5/9780733639197.jpg');
 
 
 --
@@ -394,7 +335,23 @@ INSERT INTO public.book_tag VALUES
 	('a5bf054bd-1ef9-48bb-9822-89ef233e2672', 'T1004'),
 	('aff44ed70-623b-465f-a2d9-d01161c29eba', 'T1004'),
 	('a4607e8dc-7ec3-4449-94fb-ec8b8a9c0f50', 'T1004'),
-	('ad94b33ea-34b9-4cad-a5d8-383b18eccc26', 'T1004');
+	('ad94b33ea-34b9-4cad-a5d8-383b18eccc26', 'T1004'),
+	('a5c5ccab2-c9eb-436f-9167-80e84b1bb897', 'T1004'),
+	('a5c5ccab2-c9eb-436f-9167-80e84b1bb897', 'T1001'),
+	('a5c5ccab2-c9eb-436f-9167-80e84b1bb897', 'T1009'),
+	('a5c5ccab2-c9eb-436f-9167-80e84b1bb897', 'T1008'),
+	('a5c5ccab2-c9eb-436f-9167-80e84b1bb897', 'T1029'),
+	('aa640c333-89c7-4a23-b5fe-486b7873c136', 'T1017'),
+	('aa640c333-89c7-4a23-b5fe-486b7873c136', 'T1015'),
+	('aa640c333-89c7-4a23-b5fe-486b7873c136', 'T1029'),
+	('aa640c333-89c7-4a23-b5fe-486b7873c136', 'T1005'),
+	('a436d387f-e238-4706-82e5-8f23f1192fe7', 'T1029'),
+	('a436d387f-e238-4706-82e5-8f23f1192fe7', 'T1005'),
+	('a17973a0f-28f5-487c-9d16-5d03f27232e6', 'T1012'),
+	('a203f12d4-db96-4579-8b6f-0280fd42c420', 'T1005'),
+	('a4d0ebcef-d918-482e-96f2-e0781d8cc401', 'T1008'),
+	('a4d0ebcef-d918-482e-96f2-e0781d8cc401', 'T1017'),
+	('a4d0ebcef-d918-482e-96f2-e0781d8cc401', 'T1026');
 
 
 --
@@ -411,7 +368,9 @@ INSERT INTO public.borrow VALUES
 --
 
 INSERT INTO public.events VALUES
-	('a57c7ba28-8061-4ab4-ae7b-89d79eb36ea9', 'Pyramids,Giza,Egypt', 500, 1000, 'J. K. Rowling Signing Books!!', '2022-12-31', 'The amazing author of the Harry Potter series is coming to Egypt to make a great festival and sign books for fans.', 'https://media.discordapp.net/attachments/916775831064424478/1053701343694573688/pexels-caleb-oquendo-3023317.jpg?width=994&height=663');
+	('a57c7ba28-8061-4ab4-ae7b-89d79eb36ea9', 'Pyramids,Giza,Egypt', 500, 1000, 'J. K. Rowling Signing Books!!', '2022-12-31', 'The amazing author of the Harry Potter series is coming to Egypt to make a great festival and sign books for fans.', 'https://media.discordapp.net/attachments/916775831064424478/1053701343694573688/pexels-caleb-oquendo-3023317.jpg?width=994&height=663'),
+	('ab02903df-eeb3-4378-a0d5-9658bc232fcf', 'tokyo,japan', 1988, 500, 'Tokyo Goul Cosplay Event', '2023-04-23', 'Tokyo Ghoul is a Japanese dark fantasy manga series written and illustrated by Sui Ishida. It was serialized in Shueisha s seinen manga magazine Weekly Young Jump between September 2011 and September 2014, and was collected in fourteen tank┼ìbon volumes. A prequel, titled Tokyo Ghoul [Jack], ran online on Jump Live in 2013 and was collected in a single tank┼ìbon volume. A sequel, titled Tokyo Ghoul:re, was serialized in Weekly Young Jump between October 2014 and July 2018, and was collected in sixteen tank┼ìbon volumes. The story is set in a world where humans and vicious species, known as ghouls, creatures that look like normal people but can only survive by eating human flesh, live among the human population in secrecy.', 'https://i.ibb.co/Dzyd1gn/1969348.jpg'),
+	('a82a4040c-0734-4760-a02f-86498e19057c', 'haram,Giza,Egypt', 199, 30, 'Night of the sky in darkness', '2023-02-10', 'Night (also described as night time, unconventionally spelled as "nite") is the period of ambient darkness from sunset to sunrise during each 24-hour day, when the Sun is below the horizon. The exact time when night begins and ends depends on the location and varies throughout the year, based on factors such as season and latitude.\r\n\r\nThe word can be used in a different sense as the time between bedtime and morning. In common communication, the word night is used as a farewell ("good night", sometimes shortened to "night"), mainly when someone is going to sleep or leaving.[1]\r\n\r\nAstronomical night is the period between astronomical dusk and astronomical dawn when the Sun is between 18 and 90 degrees below the horizon and does not illuminate the sky. As seen from latitudes between about 48.56┬░ and 65.73┬░ north or south of the Equator, complete darkness does not occur around the summer solstice because, although the Sun sets, it is never more than 18┬░ below the horizon at lower culmination, ΓêÆ90┬░ Sun angles occur at the Tropic of Cancer on the December solstice and Tropic of Capricorn on the June solstice, and at the equator on equinoxes. And as seen from latitudes greater than 72┬░ north or south of the equator, complete darkness does not occur both equinoxes because, although the Sun sets, it is never more than 18┬░ below the horizon', 'https://i.ibb.co/L6gpPcC/5462979.jpg');
 
 
 --
@@ -457,6 +416,13 @@ INSERT INTO public.rate VALUES
 
 INSERT INTO public.reader VALUES
 	('a06dd3e9b-e999-43e1-99bd-d0314f7e381f', 'mohamed', 'atef', 'Mohamed', '$2b$12$CdoZ030miuSFvxmXttfYb.8zHRFNwVyyRkGVtgJHaPJ00/7AzvOXW', '2002-08-30', 200, true, 'https://i.ibb.co/n6D6kG7/Cam-Scanner-06-30-2022-19-00-1.jpg', 'https://uploads-ssl.webflow.com/5a885600d9716c0001a422b2/6262ccfc99b9de80dbdf73f7_types-of-books-p-1080.jpeg', 'Reader', 'Giza'),
+	('a9649899d-f632-467a-85b6-f989dbcfde6c', 'Lauren', 'Willig', 'Lauren Willig', '$2b$12$Uwa0Xeta1sUvb0u.Z2h5XuqzPkrjJPiLKCtRXtIkbEaaE7NiURdUm', '1977-03-28', 41000, false, 'khttps://i.ibb.co/Tq2GBrh/41-A2o98k-IOL.jpg', 'https://uploads-ssl.webflow.com/5a885600d9716c0001a422b2/6262ccfc99b9de80dbdf73f7_types-of-books-p-1080.jpeg', 'author', 'New York'),
+	('ab513a485-275a-4f37-9779-46c1c664abd3', 'Karen', 'White', 'Karen White', '$2b$12$YL36Zt9yjTVBzQcatzdNl.RCx1Iu7p3bZjWUfY7UylnE4fAqc.snS', '1964-05-30', 98000, false, 'https://i.ibb.co/hMq3qcX/images.jpg', 'https://uploads-ssl.webflow.com/5a885600d9716c0001a422b2/6262ccfc99b9de80dbdf73f7_types-of-books-p-1080.jpeg', 'author', 'New York'),
+	('aa53f3d5e-d450-4589-b7fc-7868830b9a55', 'Collen', 'Hoover', 'Collen Hoover', '$2b$12$73jQn7RlVEyv7hpNGfJsL.W13AL8/jdC.tNkiji6d3u/VeQxwDHdS', '1979-12-11', 20000, false, 'https://i.ibb.co/TRFqxJt/Screenshot-2022-12-28-204429.png', 'https://uploads-ssl.webflow.com/5a885600d9716c0001a422b2/6262ccfc99b9de80dbdf73f7_types-of-books-p-1080.jpeg', 'author', 'New York'),
+	('a9fd81137-e9db-4237-bde1-584256eb1173', 'Laura', 'Kaye', 'Laura Komie', '$2b$12$6Xv1NIA2L6nw3hIcQ5ry2ehc21a4hro6WrXDDO3DwnOq.GipdmLVa', '1970-08-27', 40000, false, 'https://i.ibb.co/xmDFKrp/Screenshot-2022-12-28-232749.png', 'https://uploads-ssl.webflow.com/5a885600d9716c0001a422b2/6262ccfc99b9de80dbdf73f7_types-of-books-p-1080.jpeg', 'author', 'New York'),
+	('a7bdb966d-ac6c-4fbd-894b-735a2ade7502', 'Kate', 'Quinn', 'Kate Quinn', '$2b$12$cGe2r3/l2dZtwEr65uxUnONmVRTL2CCS3YyUfiFyNd6iUr4anES0u', '1981-11-30', 60000, false, 'https://i.ibb.co/dPnqk0R/Screenshot-2022-12-28-232120.png', 'https://uploads-ssl.webflow.com/5a885600d9716c0001a422b2/6262ccfc99b9de80dbdf73f7_types-of-books-p-1080.jpeg', 'author', 'New York'),
+	('ae25bddc4-8b59-47ed-aba8-2af11d8c1909', 'Kelly', 'Rimmer', 'Kelly Rimmer', '$2b$12$jVbivOAGWNVV6nmnuH9aEuvjw2Y5Iu1UT4n/QLsb2KM6nOUZokXt.', '1992-10-14', 1550, false, 'https://i.ibb.co/4s6cPPV/Kelly-Rimmer.jpg', 'https://uploads-ssl.webflow.com/5a885600d9716c0001a422b2/6262ccfc99b9de80dbdf73f7_types-of-books-p-1080.jpeg', 'admin', 'New York'),
+	('ac3d1ea08-3104-43ed-91c3-b055d2a17537', 'Naguib', 'Mahfouz', 'Naguib Mahfouz', '$2b$12$iNYO2efCxebBG7d61YsKsuZRtCJ0XjiYfX4XB/gWuIqFP8j1h95/G', '1982-10-16', 50000, true, 'https://i.ibb.co/hXnXmnM/naguib-mahfouz.jpg', 'https://uploads-ssl.webflow.com/5a885600d9716c0001a422b2/6262ccfc99b9de80dbdf73f7_types-of-books-p-1080.jpeg', 'author', 'Cairo'),
 	('a3ddb1e7c-2bbd-4306-a121-af6ba28387fa', 'Marwan', 'Samy', 'MarwanKun', '$2b$12$PQ6IjDTdT0l8ThttcghqDehW0V3Rrvmuz2ySMum3ibW5s.AEt2LMe', '2002-07-19', 500200, true, '${pic}', 'https://uploads-ssl.webflow.com/5a885600d9716c0001a422b2/6262ccfc99b9de80dbdf73f7_types-of-books-p-1080.jpeg', 'reader', 'Giza'),
 	('a1d5b0581-aedb-451b-9af0-16c69b6d6254', 'Seif', 'Hany', 'Sofa5060', '$2b$12$hD1090ELWOcJhXnlEmCHAOPL0EZuXvqu9vkAex1UkVHYbNo7pI/pm', '2002-10-01', 500200, true, '${pic}', '${cover}', 'reader', 'Cairo'),
 	('a83636a7e-4e55-4db3-bd04-0ea2032f557a', 'Mohamed', 'Atef', '-Ghost-', '$2b$12$pNRKnLPh1MUsKden/udqW.6jUCvoYYWIwjGGchN.TFNyFGYNtd3/a', '2002-08-30', 500200, true, 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png', 'https://uploads-ssl.webflow.com/5a885600d9716c0001a422b2/6262ccfc99b9de80dbdf73f7_types-of-books-p-1080.jpeg', 'reader', 'Giza'),
@@ -473,6 +439,12 @@ INSERT INTO public.review VALUES
 	('a27166da4-7440-45ab-91f3-c693f420342b', 'a1d5b0581-aedb-451b-9af0-16c69b6d6254', 'abc1faf97-ff30-4a1a-bf5d-578696825258', 'I hope to buy this book soon I cant wait', '2022-10-20'),
 	('aa88431ce-bf41-4b43-9c32-a40fa84de820', 'a1d5b0581-aedb-451b-9af0-16c69b6d6254', 'a4607e8dc-7ec3-4449-94fb-ec8b8a9c0f50', 'ya rab', '2022-12-18'),
 	('a7da26534-4066-444f-bd28-dbea3a1c1f62', 'af0cd7987-4b09-4763-a810-c4649d868f78', 'a4607e8dc-7ec3-4449-94fb-ec8b8a9c0f50', 'WTF', '2022-12-18');
+
+
+--
+-- Data for Name: session; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
 
 
 --
@@ -540,7 +512,13 @@ INSERT INTO public.writes VALUES
 	('af0cd7987-4b09-4763-a810-c4649d868f78', 'aee18d3bb-b473-454f-a429-4ef9d85d4275'),
 	('af0cd7987-4b09-4763-a810-c4649d868f78', 'a2c6d5466-b154-47b1-b23b-63a73ec9f76c'),
 	('af0cd7987-4b09-4763-a810-c4649d868f78', 'a18eac441-660b-44d5-89e7-b8d918690545'),
-	('af0cd7987-4b09-4763-a810-c4649d868f78', 'a964791fc-da74-4fc3-829b-a7dd08badcf5');
+	('af0cd7987-4b09-4763-a810-c4649d868f78', 'a964791fc-da74-4fc3-829b-a7dd08badcf5'),
+	('a7bdb966d-ac6c-4fbd-894b-735a2ade7502', 'a17973a0f-28f5-487c-9d16-5d03f27232e6'),
+	('ab513a485-275a-4f37-9779-46c1c664abd3', 'a203f12d4-db96-4579-8b6f-0280fd42c420'),
+	('aa53f3d5e-d450-4589-b7fc-7868830b9a55', 'a436d387f-e238-4706-82e5-8f23f1192fe7'),
+	('ae25bddc4-8b59-47ed-aba8-2af11d8c1909', 'a4d0ebcef-d918-482e-96f2-e0781d8cc401'),
+	('a3ddb1e7c-2bbd-4306-a121-af6ba28387fa', 'a5c5ccab2-c9eb-436f-9167-80e84b1bb897'),
+	('ac3d1ea08-3104-43ed-91c3-b055d2a17537', 'aa640c333-89c7-4a23-b5fe-486b7873c136');
 
 
 --
@@ -828,9 +806,3 @@ ALTER TABLE ONLY public.writes
 
 REVOKE USAGE ON SCHEMA public FROM PUBLIC;
 GRANT ALL ON SCHEMA public TO PUBLIC;
-
-
---
--- PostgreSQL database dump complete
---
-
