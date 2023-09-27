@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -34,8 +34,7 @@ a{
   position: relative;
   transition: 50ms;
 }
-.publish:hover{
-
+.publish:hover {
 }
 .bi-journal-check,
 .bi-journal-text {
@@ -164,16 +163,16 @@ li {
   font-weight: 500;
   font-size: 18px;
   white-space: nowrap;
-  color:black;
+  color: black;
   transition: 1s;
   cursor: pointer;
   scroll-behavior: smooth;
 }
 
 .new {
-  width:max-content;
+  width: max-content;
 
-  margin-right:5px ;
+  margin-right: 5px;
 }
 
 .old {
@@ -224,15 +223,17 @@ li:hover:after {
 }
 
 #NewArrivals,
-#deal,#Features {
+#deal,
+#Featured {
   padding: 25px 5%;
 }
 #NewArrivals h3,
-#deal h3,#Features h3{
-font-size: 28px;
-font-weight: 550;
+#deal h3,
+#Featured h3 {
+  font-size: 28px;
+  font-weight: 550;
 }
-#NewArrivals{
+#NewArrivals {
   padding-top: 5px;
 }
 .NewArrivals_Header {
@@ -263,16 +264,15 @@ h3 {
   height: 400px;
   cursor: pointer;
 }
-.bookdata h1{
+.bookdata h1 {
   font-size: 26px;
-  
+
   padding-right: 10px;
 }
 
-.arrival img :hover{
+.arrival img :hover {
   border: none;
   box-shadow: none;
-
 }
 
 #forscroling {
@@ -307,7 +307,6 @@ h3 {
 .sec3 {
   padding-top: 10px;
   min-height: 43vh;
-
 }
 
 #deal {
@@ -325,7 +324,7 @@ h3 {
 }
 
 .deal img {
-  height: 400px;;
+  height: 400px;
 }
 
 .deal img:hover {
@@ -365,7 +364,6 @@ h3 {
   justify-content: space-around;
   padding: 0 5px;
   padding-bottom: 10px;
-
 }
 
 #show_img {
@@ -381,7 +379,6 @@ h3 {
 #show_BOOK p {
   padding: 10px 20px;
   padding-left: 0;
-
 }
 
 .checked {
@@ -398,8 +395,6 @@ h6 {
   transform: scale(1);
   border: none;
 }
-
-
 
 .sec4 h2 {
   text-align: center;
@@ -427,12 +422,11 @@ h6 {
   margin-top: 30px;
   height: auto;
   display: grid;
-  
+
   grid-template-columns: repeat(auto-fit, 425px);
 
   justify-content: space-evenly;
-  gap: 60px; 
-
+  gap: 60px;
 }
 
 .Event {
@@ -472,10 +466,7 @@ h6 {
   left: 220px;
   cursor: pointer;
   color: #4a6fde;
- 
 }
-
-
 
 .Event h5 {
   margin: 0 0 5px;
@@ -495,7 +486,7 @@ h6 {
 }
 
 .user {
-cursor: pointer;
+  cursor: pointer;
 }
 .reveal {
   position: relative;
@@ -616,9 +607,8 @@ hr {
   width: 100%;
 }
 
-
-
-.show_books_btns button, .view_book {
+.show_books_btns button,
+.view_book {
   background-color: #ffffff;
   color: #000044;
   border: 2px solid #000044;
@@ -628,7 +618,8 @@ hr {
   transition: 0.5s;
   text-align: center;
 }
-.show_books_btns button:hover, .view_book:hover {
+.show_books_btns button:hover,
+.view_book:hover {
   background-color: #000044;
   color: white;
 }
@@ -637,6 +628,5 @@ hr {
   display: flex;
   flex-direction: column;
   flex-basis: 63%;
-  padding-left:20px ;
+  padding-left: 20px;
 }
-
