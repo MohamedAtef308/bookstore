@@ -1,9 +1,7 @@
 # bookstore
 
 ## Running the App
-note: **postgres** will be needed
+**note:** You'll need to have node.js installed 
 1. run ```npm install``` in the terminal
-2. create a database called **Project1**
-3. copy the script in **Database Script**
-4. run it in the **Project1** database
-5. run ```npm start``` in the terminal
+2. run ```npm start``` in the terminal
+3. open localhost:8000 in your browser
