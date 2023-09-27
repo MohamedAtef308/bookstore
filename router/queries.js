@@ -1,6 +1,7 @@
 const { model } = require("mongoose");
 const { Pool, Client } = require("pg");
-const connectionString = "postgres://postgres:root@localhost:5432/Project1";
+const connectionString =
+  "postgres://vasceujh:kgoMtpiQKZ2gDHqwGsSuaFTWFc85ilak@hansken.db.elephantsql.com/vasceujh";
 
 const pool = new Client(connectionString);
 pool.connect();
